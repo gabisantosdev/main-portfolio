@@ -1,0 +1,12 @@
+allowBuilds:
+  esbuild: set this to true or false
+  workerd: set this to true or false
+minimumReleaseAgeExclude:
+  - '@cloudflare/vite-plugin@1.54.6'
+  - '@cloudflare/workerd-darwin-64@1.20260908.1'
+  - '@cloudflare/workerd-darwin-arm64@1.20260908.1'
+  - '@cloudflare/workerd-linux-64@1.20260908.1'
+  - '@cloudflare/workerd-linux-arm64@1.20260908.1'
+  - '@cloudflare/workerd-windows-64@1.20260908.1'
+  - miniflare@5.20260908.0-alpha
+  - workerd@1.20260908.1

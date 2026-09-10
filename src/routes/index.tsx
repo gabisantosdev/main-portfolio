@@ -1,0 +1,59 @@
+import { createFileRoute } from '@tanstack/react-router';
+import { Button } from '#/lib/global/ui/Button/components';
+import { Effect } from '#/lib/global/ui/effects/components';
+import { Icon } from '#/lib/global/ui/icons/components';
+import { Section } from '#/lib/global/ui/section/components';
+import { About } from '#/lib/sections/about/components';
+import { Hero } from '#/lib/sections/hero/components';
+
+export const Route = createFileRoute('/')({ component: App });
+
+function App() {
+	return (
+		<main>
+			<Section.Root aria-label='Hero section'>
+				<Hero.Bio />
+				<Section.Container>
+					<Section.Info>
+						<Section.TitleH1>
+							Crio websites premium, feitos para destacar sua marca.
+						</Section.TitleH1>
+						<Section.Description>
+							Design e desenvolvimento sob medida, combinando estética,
+							funcionalidade e performance.
+						</Section.Description>
+					</Section.Info>
+					<Button.Container>
+						<Button.Root href='/'>
+							<Button.Text>Vamos conversar</Button.Text>
+							<Icon.ArrowRight height='0.5rem' width='0.625rem' />
+						</Button.Root>
+						<Button.SecondaryRoot href='/'>
+							<Button.Text>Ver projetos</Button.Text>
+						</Button.SecondaryRoot>
+					</Button.Container>
+					<Effect.TextLoop>
+						Product Design ✦ UX/UI ✦ Web Design ✦ Desenvolvimento Web ✦
+					</Effect.TextLoop>
+				</Section.Container>
+			</Section.Root>
+
+			<Section.Root aria-label='About me section'>
+				<Section.TitleH2>Sobre mim</Section.TitleH2>
+				<Section.Description>
+					Sou Gabriel Santos Coutinho — desenvolvedor web e web designer,
+					transformando ideias em experiências digitais refinadas, funcionais e
+					bem construídas.
+				</Section.Description>
+				<About.Links />
+			</Section.Root>
+
+			<Section.Root aria-label='Services section'>
+				<div>
+					<Section.TitleH2>Serviços</Section.TitleH2>
+					<Section.Subtitle>Do conceito ao produto final.</Section.Subtitle>
+				</div>
+			</Section.Root>
+		</main>
+	);
+}
