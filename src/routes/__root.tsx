@@ -1,6 +1,6 @@
 import * as stylex from '@stylexjs/stylex'
 import { createRootRoute, HeadContent, Scripts } from '@tanstack/react-router'
-import { SocialMediaInformation } from '#/lib/global/constants/social-media-informations'
+import { SocialMediaInformation } from '#/lib/global/constants/social-media-information'
 import { Button } from '#/lib/global/ui/Button/components'
 import { Icon } from '#/lib/global/ui/icons/components'
 import { Logo } from '#/lib/global/ui/logo/components'
@@ -44,6 +44,7 @@ export const Route = createRootRoute({
 		links: [{ rel: 'stylesheet', href: globalCss }],
 	}),
 	shellComponent: RootDocument,
+	notFoundComponent: NotFound,
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
@@ -97,23 +98,21 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 
 							<Cta.Container>
 								<Cta.Text>Redes Sociais</Cta.Text>
-								<Cta.Container>
-									<Cta.SocialMediaList>
-										{SocialMediaInformation.map((socialMedia) => {
-											const IconNavigation = Icon[socialMedia.iconName]
+								<Cta.SocialMediaList>
+									{SocialMediaInformation.map((socialMedia) => {
+										const IconNavigation = Icon[socialMedia.iconName]
 
-											return (
-												<Cta.SocialMediaLink
-													href={socialMedia.url}
-													key={socialMedia.url}
-													label={socialMedia.label}
-												>
-													<IconNavigation height='1.125rem' width='1.125rem' />
-												</Cta.SocialMediaLink>
-											)
-										})}
-									</Cta.SocialMediaList>
-								</Cta.Container>
+										return (
+											<Cta.SocialMediaLink
+												href={socialMedia.url}
+												key={socialMedia.label}
+												label={socialMedia.label}
+											>
+												<IconNavigation height='1.125rem' width='1.125rem' />
+											</Cta.SocialMediaLink>
+										)
+									})}
+								</Cta.SocialMediaList>
 							</Cta.Container>
 						</Cta.Root>
 					</Section.Root>
@@ -125,5 +124,14 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 				<Scripts />
 			</body>
 		</html>
+	)
+}
+
+function NotFound() {
+	return (
+		<main>
+			<h1>404</h1>
+			<p>Página não encontrada.</p>
+		</main>
 	)
 }

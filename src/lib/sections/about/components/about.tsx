@@ -4,6 +4,7 @@ import type { ComponentProps } from 'react'
 import { Icon } from '#/lib/global/ui/icons/components'
 import { borders } from '#/styles/tokens/borders.stylex'
 import { colors } from '#/styles/tokens/colors.stylex'
+import { palette } from '#/styles/tokens/palette.stylex'
 import { spacing } from '#/styles/tokens/spacing.stylex'
 import { typography } from '#/styles/tokens/typography.stylex'
 
@@ -21,12 +22,14 @@ const styles = stylex.create({
 		paddingRight: spacing[200],
 		borderBottomWidth: borders.width,
 		borderBottomStyle: borders.style,
-		borderBottomColor: borders.mid,
+		borderBottomColor: borders.light,
 		color: colors.text100,
 		fontSize: typography.bodyMd,
-		transition: 'padding-right 300ms ease-in-out',
+		transition:
+			'padding-right 300ms ease-in-out, border-bottom-color 300ms ease-in-out',
 		':hover': {
 			paddingRight: 0,
+			borderBottomColor: palette.navy200,
 		},
 	},
 
@@ -55,28 +58,6 @@ interface AboutLinksProps extends ComponentProps<'div'> {}
 export function AboutLinks({ ...restProps }: AboutLinksProps) {
 	return (
 		<div {...stylex.props(styles.container)} {...restProps}>
-			<a {...stylex.props(styles.link)} href='/'>
-				<div {...stylex.props(styles.content)}>
-					<Icon.Email {...stylex.props(styles.icon)} />
-					<span>|</span>
-					<span {...stylex.props(styles.text)}>
-						contato@gabrielscoutinho.com
-					</span>
-				</div>
-
-				<Icon.ArrowRight {...stylex.props(styles.icon)} />
-			</a>
-
-			<a {...stylex.props(styles.link)} href='/'>
-				<div {...stylex.props(styles.content)}>
-					<Icon.WhatsApp {...stylex.props(styles.icon)} />
-					<span>|</span>
-					<span {...stylex.props(styles.text)}>WhatsApp</span>
-				</div>
-
-				<Icon.ArrowRight {...stylex.props(styles.icon)} />
-			</a>
-
 			<a {...stylex.props(styles.link)} href='/'>
 				<div {...stylex.props(styles.content)}>
 					<Icon.Curriculo {...stylex.props(styles.icon)} />

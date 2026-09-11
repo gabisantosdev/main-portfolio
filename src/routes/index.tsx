@@ -79,7 +79,7 @@ function App() {
 					<Section.Subtitle>Trabalhos selecionados</Section.Subtitle>
 				</Section.TitleContainer>
 
-				{Projects.map((project) => (
+				{Projects.slice(0, 2).map((project) => (
 					<ProjectCard.Container
 						key={project.id}
 						params={{ slugs: `${project.slug}-${project.id}` }}

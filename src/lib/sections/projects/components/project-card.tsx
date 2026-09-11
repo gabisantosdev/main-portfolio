@@ -1,7 +1,6 @@
 import * as stylex from '@stylexjs/stylex'
 import { Link, type LinkProps } from '@tanstack/react-router'
 import type { ComponentProps } from 'react'
-
 import { borders } from '#/styles/tokens/borders.stylex'
 import { colors } from '#/styles/tokens/colors.stylex'
 import { effects } from '#/styles/tokens/effects.stylex'
@@ -61,7 +60,7 @@ const styles = stylex.create({
 		pointerEvents: 'none',
 	},
 	title: {
-		fontSize: typography.bodyXl,
+		fontSize: typography.bodyLg,
 		fontWeight: typography.weightRegular,
 		color: colors.textWhite,
 	},
@@ -84,7 +83,9 @@ export const ProjectCardRoot = ({ ...restProps }: ProjectCardRootProps) => {
 interface ProjectCardImageProps extends ComponentProps<'img'> {}
 
 export const ProjectCardImage = ({ ...restProps }: ProjectCardImageProps) => {
-	return <img {...stylex.props(styles.image)} {...restProps} />
+	return (
+		<img {...stylex.props(styles.image)} alt='Project img' {...restProps} />
+	)
 }
 
 interface ProjectCardOverlayProps extends ComponentProps<'div'> {}

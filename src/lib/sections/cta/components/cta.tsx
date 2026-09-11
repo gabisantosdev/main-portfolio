@@ -32,9 +32,10 @@ const styles = stylex.create({
 	socialMedia: {
 		display: 'flex',
 		alignItems: 'center',
+		justifyContent: 'center',
 		gap: spacing[400],
 	},
-	link: {
+	socialMediaLink: {
 		position: 'relative',
 		display: 'inline-flex',
 		alignItems: 'center',
@@ -121,7 +122,11 @@ export const CtaSocialMediaLink = ({
 }: CtaSocialMediaLinkProps) => {
 	return (
 		<li>
-			<a {...stylex.props(styles.link)} data-label={label} {...restProps}>
+			<a
+				{...stylex.props(styles.socialMediaLink)}
+				data-label={label}
+				{...restProps}
+			>
 				{children}
 			</a>
 		</li>

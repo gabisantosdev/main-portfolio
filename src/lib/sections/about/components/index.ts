@@ -1,4 +1,4 @@
-import { AboutLinks } from './About'
+import { AboutLinks } from './about'
 
 export const About = {
 	Links: AboutLinks,

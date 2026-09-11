@@ -2,7 +2,10 @@ import { createFileRoute, notFound } from '@tanstack/react-router'
 import { Button } from '#/lib/global/ui/Button/components'
 import { Icon } from '#/lib/global/ui/icons/components'
 import { Section } from '#/lib/global/ui/section/components'
-import { ProjectInformation } from '#/lib/sections/projects/components'
+import {
+	ProjectCard,
+	ProjectInformation,
+} from '#/lib/sections/projects/components'
 import { Projects } from '#/lib/sections/projects/data/projects.data'
 
 export const Route = createFileRoute('/projects/$slugs')({
@@ -12,16 +15,21 @@ export const Route = createFileRoute('/projects/$slugs')({
 			(project) => `${project.slug}-${project.id}` === params.slugs
 		)
 
+		const otherProjects = Projects.filter(
+			(otherProject) => otherProject.id !== project?.id
+		).slice(0, 2)
+
 		if (!project) throw notFound()
 
 		return {
 			project,
+			otherProjects,
 		}
 	},
 })
 
 function ProjectPage() {
-	const { project } = Route.useLoaderData()
+	const { project, otherProjects } = Route.useLoaderData()
 
 	return (
 		<main>
@@ -73,6 +81,32 @@ function ProjectPage() {
 
 				<Section.Image alt={project.name} src={project.image} />
 			</Section.Root>
+
+			<Section.RootSecondary>
+				<Section.TitleContainer>
+					<Section.TitleH2>Mais projetos</Section.TitleH2>
+				</Section.TitleContainer>
+
+				{otherProjects.slice(0, 2).map((otherProject) => (
+					<ProjectCard.Container
+						key={otherProject.id}
+						params={{ slugs: `${otherProject.slug}-${otherProject.id}` }}
+						to='/projects/$slugs'
+					>
+						<ProjectCard.CardRoot>
+							<ProjectCard.CardImage
+								alt={otherProject.name}
+								src={otherProject.image}
+							/>
+							<ProjectCard.CardOverlay>
+								<ProjectCard.CardTitle>
+									{otherProject.name}
+								</ProjectCard.CardTitle>
+							</ProjectCard.CardOverlay>
+						</ProjectCard.CardRoot>
+					</ProjectCard.Container>
+				))}
+			</Section.RootSecondary>
 		</main>
 	)
 }
