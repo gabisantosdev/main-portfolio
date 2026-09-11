@@ -1,18 +1,9 @@
-import * as stylex from '@stylexjs/stylex'
 import { createFileRoute, notFound } from '@tanstack/react-router'
 import { Button } from '#/lib/global/ui/Button/components'
 import { Icon } from '#/lib/global/ui/icons/components'
 import { Section } from '#/lib/global/ui/section/components'
 import { ProjectInformation } from '#/lib/sections/projects/components'
 import { Projects } from '#/lib/sections/projects/data/projects.data'
-import { radius } from '#/styles/tokens/radius.stylex'
-
-const styles = stylex.create({
-	img: {
-		width: '100%',
-		borderRadius: radius[500],
-	},
-})
 
 export const Route = createFileRoute('/projects/$slugs')({
 	component: ProjectPage,
@@ -21,9 +12,7 @@ export const Route = createFileRoute('/projects/$slugs')({
 			(project) => `${project.slug}-${project.id}` === params.slugs
 		)
 
-		if (!project) {
-			throw notFound()
-		}
+		if (!project) throw notFound()
 
 		return {
 			project,
@@ -37,6 +26,11 @@ function ProjectPage() {
 	return (
 		<main>
 			<Section.Root aria-label='Project information section'>
+				<Button.Simple to='..'>
+					<Icon.ArrowLeft height='0.5rem' width='0.625rem' />
+					<span>Voltar para projetos</span>
+				</Button.Simple>
+
 				<Section.TitleH1>{project.name}</Section.TitleH1>
 				<Section.Description>{project.info?.description}</Section.Description>
 
@@ -77,11 +71,7 @@ function ProjectPage() {
 					</ProjectInformation.Container>
 				</ProjectInformation.Root>
 
-				<img
-					{...stylex.props(styles.img)}
-					alt={project.name}
-					src={project.image}
-				/>
+				<Section.Image alt={project.name} src={project.image} />
 			</Section.Root>
 		</main>
 	)

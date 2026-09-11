@@ -1,4 +1,5 @@
 import * as stylex from '@stylexjs/stylex'
+import { Link, type LinkComponentProps } from '@tanstack/react-router'
 import type { ComponentProps } from 'react'
 import { colors } from '#/styles/tokens/colors.stylex'
 import { effects } from '#/styles/tokens/effects.stylex'
@@ -87,7 +88,7 @@ export const HeaderNav = ({ children, ...restProps }: HeaderNavProps) => {
 	)
 }
 
-interface HeaderNavLinkProps extends ComponentProps<'a'> {
+interface HeaderNavLinkProps extends LinkComponentProps {
 	label: string
 }
 
@@ -98,9 +99,9 @@ export const HeaderNavLink = ({
 }: HeaderNavLinkProps) => {
 	return (
 		<li>
-			<a {...stylex.props(styles.navLink)} data-label={label} {...restProps}>
+			<Link {...stylex.props(styles.navLink)} data-label={label} {...restProps}>
 				{children}
-			</a>
+			</Link>
 		</li>
 	)
 }

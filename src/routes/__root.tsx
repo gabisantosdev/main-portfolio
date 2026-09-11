@@ -1,7 +1,11 @@
 import * as stylex from '@stylexjs/stylex'
 import { createRootRoute, HeadContent, Scripts } from '@tanstack/react-router'
+import { SocialMediaInformation } from '#/lib/global/constants/social-media-informations'
+import { Button } from '#/lib/global/ui/Button/components'
 import { Icon } from '#/lib/global/ui/icons/components'
 import { Logo } from '#/lib/global/ui/logo/components'
+import { Section } from '#/lib/global/ui/section/components'
+import { Cta } from '#/lib/sections/cta/components'
 import { Footer } from '#/lib/sections/footer/components'
 import { Header } from '#/lib/sections/header/components'
 import { HeaderNavigationLinks } from '#/lib/sections/header/constants/header-navigation-links'
@@ -17,7 +21,7 @@ const styles = stylex.create({
 		maxWidth: '720px',
 		width: '100%',
 		minHeight: '100dvh',
-		padding: '0 20px',
+		padding: spacing[500],
 		margin: 'auto',
 	},
 })
@@ -59,9 +63,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 								return (
 									<Header.NavigationLink
 										aria-label={navigation.label}
-										href={navigation.link}
+										hash={navigation.hash}
 										key={navigation.link}
 										label={navigation.label}
+										to={navigation.link}
 									>
 										<IconNavigation height='1.125rem' width='1.125rem' />
 									</Header.NavigationLink>
@@ -71,6 +76,47 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 					</Header.Root>
 
 					{children}
+
+					<Section.Root aria-label='CTA section' id='contact'>
+						<Cta.Root>
+							<Cta.Container>
+								<Cta.Title>Seu próximo projeto começa aqui.</Cta.Title>
+								<Cta.Text>Vamos conversar sobre sua ideia.</Cta.Text>
+							</Cta.Container>
+
+							<Button.Container>
+								<Button.Root href='/'>
+									<Button.Text>WhatsApp</Button.Text>
+									<Icon.ArrowRight height='0.5rem' width='0.625rem' />
+								</Button.Root>
+								<Button.SecondaryRoot href='/'>
+									<Button.Text>E-mail</Button.Text>
+									<Icon.ArrowRight height='0.5rem' width='0.625rem' />
+								</Button.SecondaryRoot>
+							</Button.Container>
+
+							<Cta.Container>
+								<Cta.Text>Redes Sociais</Cta.Text>
+								<Cta.Container>
+									<Cta.SocialMediaList>
+										{SocialMediaInformation.map((socialMedia) => {
+											const IconNavigation = Icon[socialMedia.iconName]
+
+											return (
+												<Cta.SocialMediaLink
+													href={socialMedia.url}
+													key={socialMedia.url}
+													label={socialMedia.label}
+												>
+													<IconNavigation height='1.125rem' width='1.125rem' />
+												</Cta.SocialMediaLink>
+											)
+										})}
+									</Cta.SocialMediaList>
+								</Cta.Container>
+							</Cta.Container>
+						</Cta.Root>
+					</Section.Root>
 
 					<Footer.Root>
 						<Footer.Text>© 2026 GABRIEL S. COUTINHO</Footer.Text>

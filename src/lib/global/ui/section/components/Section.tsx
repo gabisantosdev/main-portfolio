@@ -22,13 +22,18 @@ const styles = stylex.create({
 		display: 'flex',
 		flexDirection: 'column',
 		gap: spacing[700],
-		padding: spacing[500],
+		padding: `${spacing[500]} 0`,
 		marginBottom: spacing[700],
 	},
 	container: {
 		display: 'flex',
 		flexDirection: 'column',
 		gap: spacing[700],
+	},
+	titleContainer: {
+		display: 'flex',
+		flexDirection: 'column',
+		padding: `0 0 0 ${spacing[500]}`,
 	},
 	info: {
 		display: 'flex',
@@ -59,6 +64,10 @@ const styles = stylex.create({
 		lineHeight: '135%',
 		color: colors.text300,
 	},
+	image: {
+		width: '100%',
+		borderRadius: radius[500],
+	},
 })
 
 interface SectionRootProps extends ComponentProps<'section'> {}
@@ -77,6 +86,14 @@ interface SectionContainerProps extends ComponentProps<'div'> {}
 
 export const SectionContainer = ({ ...restProps }: SectionContainerProps) => {
 	return <div {...stylex.props(styles.container)} {...restProps} />
+}
+
+interface SectionTitleContainerProps extends ComponentProps<'div'> {}
+
+export const SectionTitleContainer = ({
+	...restProps
+}: SectionTitleContainerProps) => {
+	return <div {...stylex.props(styles.titleContainer)} {...restProps} />
 }
 
 interface SectionInfoProps extends ComponentProps<'div'> {}
@@ -115,4 +132,10 @@ export const SectionDescription = ({
 	...restProps
 }: SectionDescriptionProps) => {
 	return <p {...stylex.props(styles.description)} {...restProps} />
+}
+
+interface SectionImageProps extends ComponentProps<'img'> {}
+
+export const SectionImage = ({ ...restProps }: SectionImageProps) => {
+	return <img {...stylex.props(styles.image)} {...restProps} />
 }

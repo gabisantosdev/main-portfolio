@@ -1,4 +1,5 @@
 import * as stylex from '@stylexjs/stylex'
+import { Link, type LinkComponentProps } from '@tanstack/react-router'
 import type { ComponentProps } from 'react'
 import { borders } from '#/styles/tokens/borders.stylex'
 import { colors } from '#/styles/tokens/colors.stylex'
@@ -35,6 +36,14 @@ const styles = stylex.create({
 		color: `${colors.text400} !important`,
 		backgroundColor: colors.backgroundLight,
 	},
+	simple: {
+		fontSize: typography.bodySm,
+		fontWeight: typography.weightMedium,
+		display: 'flex',
+		alignItems: 'center',
+		gap: spacing[200],
+		color: colors.text100,
+	},
 	container: {
 		display: 'flex',
 		flexDirection: {
@@ -48,18 +57,68 @@ const styles = stylex.create({
 	},
 })
 
-interface ButtonRootProps extends ComponentProps<'a'> {}
-
-export const ButtonRoot = ({ ...restProps }: ButtonRootProps) => {
-	return <a {...stylex.props(styles.base, styles.root)} {...restProps} />
+interface ButtonRootProps {
+	to?: LinkComponentProps['to']
+	href?: string
+	children: React.ReactNode
 }
 
-interface ButtonSecondaryRootProps extends ComponentProps<'a'> {}
+export const ButtonRoot = ({ href, to, children }: ButtonRootProps) => {
+	if (href) {
+		return (
+			<a
+				{...stylex.props(styles.base, styles.root)}
+				href={href}
+				rel='noopener noreferrer'
+				target='_blank'
+			>
+				{children}
+			</a>
+		)
+	}
+
+	return (
+		<Link to={to ?? '.'} {...stylex.props(styles.base, styles.root)}>
+			{children}
+		</Link>
+	)
+}
+
+interface ButtonSecondaryRootProps {
+	to?: LinkComponentProps['to']
+	href?: string
+	children: React.ReactNode
+}
 
 export const ButtonSecondaryRoot = ({
-	...restProps
+	href,
+	to,
+	children,
 }: ButtonSecondaryRootProps) => {
-	return <a {...stylex.props(styles.base, styles.secondary)} {...restProps} />
+	if (href) {
+		return (
+			<a
+				{...stylex.props(styles.base, styles.secondary)}
+				href={href}
+				rel='noopener noreferrer'
+				target='_blank'
+			>
+				{children}
+			</a>
+		)
+	}
+
+	return (
+		<Link to={to ?? '.'} {...stylex.props(styles.base, styles.secondary)}>
+			{children}
+		</Link>
+	)
+}
+
+interface ButtonSimpleProps extends LinkComponentProps {}
+
+export const ButtonSimple = ({ ...restProps }: ButtonSimpleProps) => {
+	return <Link {...stylex.props(styles.simple)} {...restProps} />
 }
 
 interface ButtonContainerProps extends ComponentProps<'div'> {}

@@ -1,6 +1,7 @@
 import * as stylex from '@stylexjs/stylex'
 import { Link, type LinkProps } from '@tanstack/react-router'
 import type { ComponentProps } from 'react'
+
 import { borders } from '#/styles/tokens/borders.stylex'
 import { colors } from '#/styles/tokens/colors.stylex'
 import { effects } from '#/styles/tokens/effects.stylex'
@@ -10,9 +11,9 @@ import { typography } from '#/styles/tokens/typography.stylex'
 
 const styles = stylex.create({
 	container: {
+		display: 'block',
 		width: '100%',
 	},
-
 	card: {
 		position: 'relative',
 		width: '100%',
@@ -22,7 +23,6 @@ const styles = stylex.create({
 		borderColor: borders.light,
 		borderRadius: radius[500],
 	},
-
 	image: {
 		display: 'block',
 		width: '100%',
@@ -38,7 +38,6 @@ const styles = stylex.create({
 			transition: 'none',
 		},
 	},
-
 	overlay: {
 		position: 'absolute',
 		right: 0,
@@ -57,6 +56,9 @@ const styles = stylex.create({
 		backgroundColor: 'rgb(7 24 49 / 50%)',
 		backdropFilter: effects.blur100,
 		WebkitBackdropFilter: effects.blur100,
+
+		// Permite que o hover chegue até a imagem.
+		pointerEvents: 'none',
 	},
 	title: {
 		fontSize: typography.bodyXl,

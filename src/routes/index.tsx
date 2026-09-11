@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Button } from '#/lib/global/ui/Button/components'
+import { ButtonSecondaryRoot } from '#/lib/global/ui/Button/components/Button'
 import { Effect } from '#/lib/global/ui/effects/components'
 import { Icon } from '#/lib/global/ui/icons/components'
 import { Section } from '#/lib/global/ui/section/components'
@@ -73,10 +74,11 @@ function App() {
 			</Section.Root>
 
 			<Section.RootSecondary aria-label='Projects section'>
-				<div>
+				<Section.TitleContainer>
 					<Section.TitleH2>Projetos</Section.TitleH2>
 					<Section.Subtitle>Trabalhos selecionados</Section.Subtitle>
-				</div>
+				</Section.TitleContainer>
+
 				{Projects.map((project) => (
 					<ProjectCard.Container
 						key={project.id}
@@ -91,6 +93,11 @@ function App() {
 						</ProjectCard.CardRoot>
 					</ProjectCard.Container>
 				))}
+
+				<ButtonSecondaryRoot to='/projects'>
+					<Button.Text>Ver todos os projetos</Button.Text>
+					<Icon.ArrowRight height='0.5rem' width='0.625rem' />
+				</ButtonSecondaryRoot>
 			</Section.RootSecondary>
 		</main>
 	)
