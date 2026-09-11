@@ -1,13 +1,13 @@
-import * as stylex from '@stylexjs/stylex';
-import { createRootRoute, HeadContent, Scripts } from '@tanstack/react-router';
-import { Icon } from '#/lib/global/ui/icons/components';
-import { Logo } from '#/lib/global/ui/logo/components';
-import { Footer } from '#/lib/sections/footer/components';
-import { Header } from '#/lib/sections/header/components';
-import { HeaderNavigationLinks } from '#/lib/sections/header/constants/header-navigation-links';
-import { spacing } from '#/styles/tokens/spacing.stylex';
-import globalCss from '../styles/global.css?url';
-import '../styles/stylex.css';
+import * as stylex from '@stylexjs/stylex'
+import { createRootRoute, HeadContent, Scripts } from '@tanstack/react-router'
+import { Icon } from '#/lib/global/ui/icons/components'
+import { Logo } from '#/lib/global/ui/logo/components'
+import { Footer } from '#/lib/sections/footer/components'
+import { Header } from '#/lib/sections/header/components'
+import { HeaderNavigationLinks } from '#/lib/sections/header/constants/header-navigation-links'
+import { spacing } from '#/styles/tokens/spacing.stylex'
+import globalCss from '../styles/global.css?url'
+import '../styles/stylex.css'
 
 const styles = stylex.create({
 	container: {
@@ -20,7 +20,7 @@ const styles = stylex.create({
 		padding: '0 20px',
 		margin: 'auto',
 	},
-});
+})
 
 export const Route = createRootRoute({
 	head: () => ({
@@ -40,7 +40,7 @@ export const Route = createRootRoute({
 		links: [{ rel: 'stylesheet', href: globalCss }],
 	}),
 	shellComponent: RootDocument,
-});
+})
 
 function RootDocument({ children }: { children: React.ReactNode }) {
 	return (
@@ -54,7 +54,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 						<Logo.Main>GABRIEL S. COUTINHO</Logo.Main>
 						<Header.Navigation>
 							{HeaderNavigationLinks.map((navigation) => {
-								const IconNavigation = Icon[navigation.iconName];
+								const IconNavigation = Icon[navigation.iconName]
 
 								return (
 									<Header.NavigationLink
@@ -65,7 +65,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 									>
 										<IconNavigation height='1.125rem' width='1.125rem' />
 									</Header.NavigationLink>
-								);
+								)
 							})}
 						</Header.Navigation>
 					</Header.Root>
@@ -79,5 +79,5 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 				<Scripts />
 			</body>
 		</html>
-	);
+	)
 }

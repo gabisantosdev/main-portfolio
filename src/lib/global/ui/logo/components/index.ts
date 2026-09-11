@@ -1,5 +1,5 @@
-import { LogoMain } from './Logo';
+import { LogoMain } from './Logo'
 
 export const Logo = {
 	Main: LogoMain,
-};
+}

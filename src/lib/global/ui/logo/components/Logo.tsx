@@ -1,7 +1,7 @@
-import * as stylex from '@stylexjs/stylex';
-import type { ComponentProps } from 'react';
-import { colors } from '#/styles/tokens/colors.stylex';
-import { typography } from '#/styles/tokens/typography.stylex';
+import * as stylex from '@stylexjs/stylex'
+import type { ComponentProps } from 'react'
+import { colors } from '#/styles/tokens/colors.stylex'
+import { typography } from '#/styles/tokens/typography.stylex'
 
 const styles = stylex.create({
 	main: {
@@ -10,10 +10,10 @@ const styles = stylex.create({
 		userSelect: 'none',
 		color: colors.text400,
 	},
-});
+})
 
 interface LogoMainProps extends ComponentProps<'div'> {}
 
 export const LogoMain = ({ ...restProps }: LogoMainProps) => {
-	return <div {...stylex.props(styles.main)} {...restProps} />;
-};
+	return <div {...stylex.props(styles.main)} {...restProps} />
+}

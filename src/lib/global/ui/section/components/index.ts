@@ -8,7 +8,7 @@ import {
 	SectionTitleH1,
 	SectionTitleH2,
 	SectionTitleH3,
-} from './Section';
+} from './Section'
 
 export const Section = {
 	Root: SectionRoot,
@@ -20,4 +20,4 @@ export const Section = {
 	TitleH3: SectionTitleH3,
 	Subtitle: SectionSubtitle,
 	Description: SectionDescription,
-};
+}

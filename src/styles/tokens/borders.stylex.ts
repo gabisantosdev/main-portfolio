@@ -1,6 +1,6 @@
-import * as stylex from '@stylexjs/stylex';
+import * as stylex from '@stylexjs/stylex'
 
-import { colors } from './colors.stylex';
+import { colors } from './colors.stylex'
 
 export const borders = stylex.defineVars({
 	width: '2px',
@@ -8,4 +8,4 @@ export const borders = stylex.defineVars({
 	light: colors.borderLight,
 	mid: colors.borderMid,
 	dark: colors.borderDark,
-});
+})

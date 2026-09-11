@@ -1,4 +1,4 @@
-import * as stylex from '@stylexjs/stylex';
+import * as stylex from '@stylexjs/stylex'
 
 export const palette = stylex.defineVars({
 	grey: '#f6f8fa',
@@ -9,4 +9,4 @@ export const palette = stylex.defineVars({
 	navy200: '#008aff',
 	navy300: '#05275b',
 	navy400: '#071831',
-});
+})

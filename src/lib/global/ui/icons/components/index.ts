@@ -9,7 +9,7 @@ import {
 	IconProjects,
 	IconTwitter,
 	IconWhatsApp,
-} from './Icons';
+} from './Icons'
 
 export const Icon = {
 	Instagram: IconInstagram,
@@ -22,4 +22,4 @@ export const Icon = {
 	Home: IconHome,
 	Projects: IconProjects,
 	Contact: IconContact,
-};
+}

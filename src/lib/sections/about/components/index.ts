@@ -1,5 +1,5 @@
-import { AboutLinks } from './About';
+import { AboutLinks } from './About'
 
 export const About = {
 	Links: AboutLinks,
-};
+}

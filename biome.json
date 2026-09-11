@@ -42,7 +42,8 @@
 			"enabled": true,
 			"quoteStyle": "single",
 			"jsxQuoteStyle": "single",
-			"semicolons": "always"
+			"semicolons": "asNeeded",
+			"trailingCommas": "es5"
 		}
 	},
 	"css": {

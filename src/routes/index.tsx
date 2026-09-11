@@ -1,12 +1,14 @@
-import { createFileRoute } from '@tanstack/react-router';
-import { Button } from '#/lib/global/ui/Button/components';
-import { Effect } from '#/lib/global/ui/effects/components';
-import { Icon } from '#/lib/global/ui/icons/components';
-import { Section } from '#/lib/global/ui/section/components';
-import { About } from '#/lib/sections/about/components';
-import { Hero } from '#/lib/sections/hero/components';
+import { createFileRoute } from '@tanstack/react-router'
+import { Button } from '#/lib/global/ui/Button/components'
+import { Effect } from '#/lib/global/ui/effects/components'
+import { Icon } from '#/lib/global/ui/icons/components'
+import { Section } from '#/lib/global/ui/section/components'
+import { About } from '#/lib/sections/about/components'
+import { Hero } from '#/lib/sections/hero/components'
+import { Services } from '#/lib/sections/services/components'
+import { CardInfos } from '#/lib/sections/services/constants/card-infos'
 
-export const Route = createFileRoute('/')({ component: App });
+export const Route = createFileRoute('/')({ component: App })
 
 function App() {
 	return (
@@ -53,7 +55,22 @@ function App() {
 					<Section.TitleH2>Serviços</Section.TitleH2>
 					<Section.Subtitle>Do conceito ao produto final.</Section.Subtitle>
 				</div>
+				<Services.Container>
+					{CardInfos.map((card) => (
+						<Services.Card key={card.id}>
+							<Services.CardNumber>{card.id}</Services.CardNumber>
+							<Services.CardInfo>
+								<Services.CardTitle>{card.title}</Services.CardTitle>
+								<Services.CardDescription>
+									{card.description}
+								</Services.CardDescription>
+							</Services.CardInfo>
+						</Services.Card>
+					))}
+				</Services.Container>
 			</Section.Root>
+
+			<Section.RootSecondary aria-label='Projects section'></Section.RootSecondary>
 		</main>
-	);
+	)
 }

@@ -8,4 +8,4 @@ export type IconsList =
 	| 'Curriculo'
 	| 'Home'
 	| 'Projects'
-	| 'Contact';
+	| 'Contact'

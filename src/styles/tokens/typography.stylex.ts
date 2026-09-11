@@ -1,4 +1,4 @@
-import * as stylex from '@stylexjs/stylex';
+import * as stylex from '@stylexjs/stylex'
 
 export const typography = stylex.defineVars({
 	fontBody: 'Inter, sans-serif',
@@ -20,4 +20,4 @@ export const typography = stylex.defineVars({
 	tracking300: '0',
 	tracking400: '0.04em',
 	tracking500: '0.08em',
-});
+})

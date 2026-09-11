@@ -1,5 +1,5 @@
-import * as stylex from '@stylexjs/stylex';
-import { palette } from './palette.stylex';
+import * as stylex from '@stylexjs/stylex'
+import { palette } from './palette.stylex'
 
 export const colors = stylex.defineVars({
 	backgroundLight: palette.white,
@@ -19,4 +19,4 @@ export const colors = stylex.defineVars({
 	text200: palette.navy200,
 	text300: palette.navy300,
 	text400: palette.navy400,
-});
+})

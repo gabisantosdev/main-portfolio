@@ -1,8 +1,8 @@
-import * as stylex from '@stylexjs/stylex';
-import type { ComponentProps } from 'react';
+import * as stylex from '@stylexjs/stylex'
+import type { ComponentProps } from 'react'
 
-import { colors } from '#/styles/tokens/colors.stylex';
-import { spacing } from '#/styles/tokens/spacing.stylex';
+import { colors } from '#/styles/tokens/colors.stylex'
+import { spacing } from '#/styles/tokens/spacing.stylex'
 
 const textLoop = stylex.keyframes({
 	from: {
@@ -11,7 +11,7 @@ const textLoop = stylex.keyframes({
 	to: {
 		transform: 'translate3d(-50%, 0, 0)',
 	},
-});
+})
 
 const styles = stylex.create({
 	root: {
@@ -42,7 +42,7 @@ const styles = stylex.create({
 		paddingRight: spacing[100],
 		color: colors.text100,
 	},
-});
+})
 
 interface TextLoopProps extends ComponentProps<'div'> {}
 
@@ -57,5 +57,5 @@ export function TextLoop({ children, ...restProps }: TextLoopProps) {
 				</div>
 			</div>
 		</div>
-	);
+	)
 }

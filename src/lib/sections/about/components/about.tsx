@@ -1,11 +1,11 @@
-import * as stylex from '@stylexjs/stylex';
-import type { ComponentProps } from 'react';
+import * as stylex from '@stylexjs/stylex'
+import type { ComponentProps } from 'react'
 
-import { Icon } from '#/lib/global/ui/icons/components';
-import { borders } from '#/styles/tokens/borders.stylex';
-import { colors } from '#/styles/tokens/colors.stylex';
-import { spacing } from '#/styles/tokens/spacing.stylex';
-import { typography } from '#/styles/tokens/typography.stylex';
+import { Icon } from '#/lib/global/ui/icons/components'
+import { borders } from '#/styles/tokens/borders.stylex'
+import { colors } from '#/styles/tokens/colors.stylex'
+import { spacing } from '#/styles/tokens/spacing.stylex'
+import { typography } from '#/styles/tokens/typography.stylex'
 
 const styles = stylex.create({
 	container: {
@@ -48,7 +48,7 @@ const styles = stylex.create({
 		flexShrink: 0,
 		color: colors.text100,
 	},
-});
+})
 
 interface AboutLinksProps extends ComponentProps<'div'> {}
 
@@ -87,5 +87,5 @@ export function AboutLinks({ ...restProps }: AboutLinksProps) {
 				<Icon.ArrowRight {...stylex.props(styles.icon)} />
 			</a>
 		</div>
-	);
+	)
 }

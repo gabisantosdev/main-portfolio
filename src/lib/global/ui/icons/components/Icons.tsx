@@ -1,9 +1,9 @@
-import * as stylex from '@stylexjs/stylex';
-import type { ComponentProps } from 'react';
+import * as stylex from '@stylexjs/stylex'
+import type { ComponentProps } from 'react'
 
 const styles = stylex.create({
 	icon: {},
-});
+})
 
 interface IconInstagramProps extends ComponentProps<'svg'> {}
 
@@ -26,8 +26,8 @@ export const IconInstagram = ({ ...restProps }: IconInstagramProps) => {
 				fill='currentColor'
 			/>
 		</svg>
-	);
-};
+	)
+}
 
 interface IconWhatsAppProps extends ComponentProps<'svg'> {}
 
@@ -52,8 +52,8 @@ export const IconWhatsApp = ({ ...restProps }: IconWhatsAppProps) => {
 				fillRule='evenodd'
 			/>
 		</svg>
-	);
-};
+	)
+}
 
 interface IconTwitterProps extends ComponentProps<'svg'> {}
 
@@ -72,8 +72,8 @@ export const IconTwitter = ({ ...restProps }: IconTwitterProps) => {
 				fill='currentColor'
 			/>
 		</svg>
-	);
-};
+	)
+}
 
 interface IconEmailProps extends ComponentProps<'svg'> {}
 
@@ -94,8 +94,8 @@ export const IconEmail = ({ ...restProps }: IconEmailProps) => {
 				strokeLinejoin='round'
 			/>
 		</svg>
-	);
-};
+	)
+}
 
 interface IconArrowRightProps extends ComponentProps<'svg'> {}
 
@@ -117,8 +117,8 @@ export const IconArrowRight = ({ ...restProps }: IconArrowRightProps) => {
 				strokeWidth='2'
 			/>
 		</svg>
-	);
-};
+	)
+}
 
 interface IconArrowLeftProps extends ComponentProps<'svg'> {}
 
@@ -140,8 +140,8 @@ export const IconArrowLeft = ({ ...restProps }: IconArrowLeftProps) => {
 				strokeWidth='2'
 			/>
 		</svg>
-	);
-};
+	)
+}
 
 interface IconCurriculoProps extends ComponentProps<'svg'> {}
 
@@ -162,8 +162,8 @@ export const IconCurriculo = ({ ...restProps }: IconCurriculoProps) => {
 				strokeLinejoin='round'
 			/>
 		</svg>
-	);
-};
+	)
+}
 
 interface IconHomeProps extends ComponentProps<'svg'> {}
 
@@ -185,8 +185,8 @@ export const IconHome = ({ ...restProps }: IconHomeProps) => {
 				strokeWidth='2'
 			/>
 		</svg>
-	);
-};
+	)
+}
 
 interface IconProjectsProps extends ComponentProps<'svg'> {}
 
@@ -208,8 +208,8 @@ export const IconProjects = ({ ...restProps }: IconProjectsProps) => {
 				strokeWidth='2'
 			/>
 		</svg>
-	);
-};
+	)
+}
 
 interface IconContactProps extends ComponentProps<'svg'> {}
 
@@ -231,5 +231,5 @@ export const IconContact = ({ ...restProps }: IconContactProps) => {
 				strokeWidth='2'
 			/>
 		</svg>
-	);
-};
+	)
+}

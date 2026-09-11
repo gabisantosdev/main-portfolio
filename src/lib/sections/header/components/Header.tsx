@@ -1,9 +1,9 @@
-import * as stylex from '@stylexjs/stylex';
-import type { ComponentProps } from 'react';
-import { colors } from '#/styles/tokens/colors.stylex';
-import { effects } from '#/styles/tokens/effects.stylex';
-import { radius } from '#/styles/tokens/radius.stylex';
-import { spacing } from '#/styles/tokens/spacing.stylex';
+import * as stylex from '@stylexjs/stylex'
+import type { ComponentProps } from 'react'
+import { colors } from '#/styles/tokens/colors.stylex'
+import { effects } from '#/styles/tokens/effects.stylex'
+import { radius } from '#/styles/tokens/radius.stylex'
+import { spacing } from '#/styles/tokens/spacing.stylex'
 
 const styles = stylex.create({
 	root: {
@@ -67,13 +67,13 @@ const styles = stylex.create({
 			transition: 'opacity 150ms ease, transform 150ms ease',
 		},
 	},
-});
+})
 
 interface HeaderRootProps extends ComponentProps<'header'> {}
 
 export const HeaderRoot = ({ ...restProps }: HeaderRootProps) => {
-	return <header {...stylex.props(styles.root)} {...restProps} />;
-};
+	return <header {...stylex.props(styles.root)} {...restProps} />
+}
 
 interface HeaderNavProps extends ComponentProps<'ul'> {}
 
@@ -84,11 +84,11 @@ export const HeaderNav = ({ children, ...restProps }: HeaderNavProps) => {
 				{children}
 			</ul>
 		</nav>
-	);
-};
+	)
+}
 
 interface HeaderNavLinkProps extends ComponentProps<'a'> {
-	label: string;
+	label: string
 }
 
 export const HeaderNavLink = ({
@@ -102,5 +102,5 @@ export const HeaderNavLink = ({
 				{children}
 			</a>
 		</li>
-	);
-};
+	)
+}

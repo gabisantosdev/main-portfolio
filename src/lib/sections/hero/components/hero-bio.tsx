@@ -1,11 +1,11 @@
-import * as stylex from '@stylexjs/stylex';
-import { useEffect, useState } from 'react';
+import * as stylex from '@stylexjs/stylex'
+import { useEffect, useState } from 'react'
 
-import avatarImage from '#/assets/images/gabriel_perfil.webp';
-import { colors } from '#/styles/tokens/colors.stylex';
-import { radius } from '#/styles/tokens/radius.stylex';
-import { spacing } from '#/styles/tokens/spacing.stylex';
-import { typography } from '#/styles/tokens/typography.stylex';
+import avatarImage from '#/assets/images/gabriel_perfil.webp'
+import { colors } from '#/styles/tokens/colors.stylex'
+import { radius } from '#/styles/tokens/radius.stylex'
+import { spacing } from '#/styles/tokens/spacing.stylex'
+import { typography } from '#/styles/tokens/typography.stylex'
 
 const fade = stylex.keyframes({
 	from: {
@@ -14,7 +14,7 @@ const fade = stylex.keyframes({
 	to: {
 		opacity: 1,
 	},
-});
+})
 
 const styles = stylex.create({
 	container: {
@@ -79,28 +79,28 @@ const styles = stylex.create({
 		animationTimingFunction: 'ease',
 		animationFillMode: 'both',
 	},
-});
+})
 
 const descriptions = [
 	'Desenvolvedor Full-Stack',
 	'Web Designer',
 	'Product Designer',
-];
+]
 
 export function HeroBio() {
-	const [currentDescription, setCurrentDescription] = useState(0);
+	const [currentDescription, setCurrentDescription] = useState(0)
 
 	useEffect(() => {
 		const interval = window.setInterval(() => {
 			setCurrentDescription((current) => {
-				return (current + 1) % descriptions.length;
-			});
-		}, 1500);
+				return (current + 1) % descriptions.length
+			})
+		}, 1500)
 
 		return () => {
-			window.clearInterval(interval);
-		};
-	}, []);
+			window.clearInterval(interval)
+		}
+	}, [])
 
 	return (
 		<div {...stylex.props(styles.container)}>
@@ -126,5 +126,5 @@ export function HeroBio() {
 				</div>
 			</div>
 		</div>
-	);
+	)
 }

@@ -1,4 +1,4 @@
-import * as stylex from '@stylexjs/stylex';
+import * as stylex from '@stylexjs/stylex'
 
 export const radius = stylex.defineVars({
 	100: '0.25rem',
@@ -10,4 +10,4 @@ export const radius = stylex.defineVars({
 	700: '2rem',
 
 	full: '9999px',
-});
+})

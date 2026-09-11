@@ -1,4 +1,4 @@
-import * as stylex from '@stylexjs/stylex';
+import * as stylex from '@stylexjs/stylex'
 
 export const spacing = stylex.defineVars({
 	100: '0.25rem',
@@ -10,4 +10,4 @@ export const spacing = stylex.defineVars({
 	700: '2rem',
 	800: '2.5rem',
 	900: '3rem',
-});
+})
