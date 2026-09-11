@@ -9,7 +9,9 @@ import { Cta } from '#/lib/sections/cta/components'
 import { Footer } from '#/lib/sections/footer/components'
 import { Header } from '#/lib/sections/header/components'
 import { HeaderNavigationLinks } from '#/lib/sections/header/constants/header-navigation-links'
+import { colors } from '#/styles/tokens/colors.stylex'
 import { spacing } from '#/styles/tokens/spacing.stylex'
+import { typography } from '#/styles/tokens/typography.stylex'
 import globalCss from '../styles/global.css?url'
 import '../styles/stylex.css'
 
@@ -23,6 +25,28 @@ const styles = stylex.create({
 		minHeight: '100dvh',
 		padding: spacing[500],
 		margin: 'auto',
+	},
+	box: {
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		gap: spacing[700],
+	},
+	content: {
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		gap: spacing[400],
+	},
+	number: {
+		fontSize: 'clamp(6rem, 3vw, 8rem)',
+		fontWeight: typography.weightMedium,
+		color: colors.text400,
+	},
+	text: {
+		fontSize: typography.bodyXl,
+		fontWeight: typography.weightMedium,
+		color: colors.text400,
 	},
 })
 
@@ -130,8 +154,17 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 function NotFound() {
 	return (
 		<main>
-			<h1>404</h1>
-			<p>Página não encontrada.</p>
+			<Section.Root>
+				<div {...stylex.props(styles.box)}>
+					<div {...stylex.props(styles.content)}>
+						<span {...stylex.props(styles.number)}>404</span>
+						<p {...stylex.props(styles.text)}>Página não encontrada.</p>
+					</div>
+					<Button.Root to='/'>
+						<Button.Text>Voltar ao início</Button.Text>
+					</Button.Root>
+				</div>
+			</Section.Root>
 		</main>
 	)
 }
