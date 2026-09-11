@@ -9,11 +9,12 @@ export const typography = stylex.defineVars({
 	bodySm: 'clamp(0.75rem, 3vw, 0.875rem)',
 	bodyMd: 'clamp(0.875rem, 3vw, 1rem)',
 	bodyLg: 'clamp(1rem, 3vw, 1.125rem)',
+	bodyXl: 'clamp(1.25rem, 3vw, 1.5rem)',
 
 	headingSm: 'clamp(0.75rem, 3vw, 0.875rem)',
 	headingMd: 'clamp(0.875rem, 3vw, 1rem)',
 	headingLg: 'clamp(1rem, 3vw, 1.25rem)',
-	headingXl: 'clamp(1.5rem, 4vw, 2rem)',
+	headingXl: 'clamp(1.5rem, 3vw, 2rem)',
 
 	tracking100: '-0.08em',
 	tracking200: '-0.04em',

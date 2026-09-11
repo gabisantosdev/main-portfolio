@@ -5,6 +5,8 @@ import { Icon } from '#/lib/global/ui/icons/components'
 import { Section } from '#/lib/global/ui/section/components'
 import { About } from '#/lib/sections/about/components'
 import { Hero } from '#/lib/sections/hero/components'
+import { ProjectCard } from '#/lib/sections/projects/components'
+import { Projects } from '#/lib/sections/projects/data/projects.data'
 import { Services } from '#/lib/sections/services/components'
 import { CardInfos } from '#/lib/sections/services/constants/card-infos'
 
@@ -70,7 +72,26 @@ function App() {
 				</Services.Container>
 			</Section.Root>
 
-			<Section.RootSecondary aria-label='Projects section'></Section.RootSecondary>
+			<Section.RootSecondary aria-label='Projects section'>
+				<div>
+					<Section.TitleH2>Projetos</Section.TitleH2>
+					<Section.Subtitle>Trabalhos selecionados</Section.Subtitle>
+				</div>
+				{Projects.map((project) => (
+					<ProjectCard.Container
+						key={project.id}
+						params={{ slugs: `${project.slug}-${project.id}` }}
+						to='/projects/$slugs'
+					>
+						<ProjectCard.CardRoot>
+							<ProjectCard.CardImage alt={project.name} src={project.image} />
+							<ProjectCard.CardOverlay>
+								<ProjectCard.CardTitle>{project.name}</ProjectCard.CardTitle>
+							</ProjectCard.CardOverlay>
+						</ProjectCard.CardRoot>
+					</ProjectCard.Container>
+				))}
+			</Section.RootSecondary>
 		</main>
 	)
 }
