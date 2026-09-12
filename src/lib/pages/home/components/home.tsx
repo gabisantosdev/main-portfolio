@@ -1,3 +1,4 @@
+import { GABRIEL_INFORMATION } from '#/lib/global/data/gabriel-information.data'
 import { Button } from '#/lib/global/ui/Button/components'
 import { ButtonSecondaryRoot } from '#/lib/global/ui/Button/components/Button'
 import { Effect } from '#/lib/global/ui/effects/components'
@@ -26,11 +27,11 @@ export const Home = () => {
 						</Section.Description>
 					</Section.Info>
 					<Button.Container>
-						<Button.Root href='/'>
+						<Button.Root href={GABRIEL_INFORMATION.urls.socialMedia.whatsApp}>
 							<Button.Text>Vamos conversar</Button.Text>
 							<Icon.ArrowRight height='0.5rem' width='0.625rem' />
 						</Button.Root>
-						<Button.SecondaryRoot href='/'>
+						<Button.SecondaryRoot to='/projects'>
 							<Button.Text>Ver projetos</Button.Text>
 						</Button.SecondaryRoot>
 					</Button.Container>

@@ -125,6 +125,8 @@ export const CtaSocialMediaLink = ({
 			<a
 				{...stylex.props(styles.socialMediaLink)}
 				data-label={label}
+				rel='noopener noreferrer'
+				target='_blank'
 				{...restProps}
 			>
 				{children}

@@ -1,6 +1,7 @@
 import * as stylex from '@stylexjs/stylex'
 import { createRootRoute, HeadContent, Scripts } from '@tanstack/react-router'
 import { SocialMediaInformation } from '#/lib/global/constants/social-media-information'
+import { GABRIEL_INFORMATION } from '#/lib/global/data/gabriel-information.data'
 import { Button } from '#/lib/global/ui/Button/components'
 import { Icon } from '#/lib/global/ui/icons/components'
 import { Logo } from '#/lib/global/ui/logo/components'
@@ -87,11 +88,15 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 							</Cta.Container>
 
 							<Button.Container>
-								<Button.Root href='/'>
+								<Button.Root
+									href={GABRIEL_INFORMATION.urls.socialMedia.whatsApp}
+								>
 									<Button.Text>WhatsApp</Button.Text>
 									<Icon.ArrowRight height='0.5rem' width='0.625rem' />
 								</Button.Root>
-								<Button.SecondaryRoot href='/'>
+								<Button.SecondaryRoot
+									href={GABRIEL_INFORMATION.urls.socialMedia.email}
+								>
 									<Button.Text>E-mail</Button.Text>
 									<Icon.ArrowRight height='0.5rem' width='0.625rem' />
 								</Button.SecondaryRoot>

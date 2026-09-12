@@ -1,6 +1,6 @@
 import * as stylex from '@stylexjs/stylex'
 import type { ComponentProps } from 'react'
-
+import { GABRIEL_INFORMATION } from '#/lib/global/data/gabriel-information.data'
 import { Icon } from '#/lib/global/ui/icons/components'
 import { borders } from '#/styles/tokens/borders.stylex'
 import { colors } from '#/styles/tokens/colors.stylex'
@@ -58,7 +58,12 @@ interface AboutLinksProps extends ComponentProps<'div'> {}
 export function AboutLinks({ ...restProps }: AboutLinksProps) {
 	return (
 		<div {...stylex.props(styles.container)} {...restProps}>
-			<a {...stylex.props(styles.link)} href='/'>
+			<a
+				{...stylex.props(styles.link)}
+				href={GABRIEL_INFORMATION.urls.curriculum}
+				rel='noopener noreferrer'
+				target='_blank'
+			>
 				<div {...stylex.props(styles.content)}>
 					<Icon.Curriculo {...stylex.props(styles.icon)} />
 					<span>|</span>

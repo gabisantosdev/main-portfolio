@@ -2,6 +2,7 @@ import * as stylex from '@stylexjs/stylex'
 import { useEffect, useState } from 'react'
 
 import avatarImage from '#/assets/images/gabriel_perfil.webp'
+import { GABRIEL_INFORMATION } from '#/lib/global/data/gabriel-information.data'
 import { colors } from '#/styles/tokens/colors.stylex'
 import { radius } from '#/styles/tokens/radius.stylex'
 import { spacing } from '#/styles/tokens/spacing.stylex'
@@ -107,13 +108,13 @@ export function HeroBio() {
 			<div {...stylex.props(styles.avatar)}>
 				<img
 					{...stylex.props(styles.avatarImage)}
-					alt='Gabriel Coutinho'
+					alt='Gabriel Coutinho avatar'
 					src={avatarImage}
 				/>
 			</div>
 
 			<div {...stylex.props(styles.content)}>
-				<p {...stylex.props(styles.name)}>Gabriel Coutinho</p>
+				<p {...stylex.props(styles.name)}>{GABRIEL_INFORMATION.name}</p>
 
 				<div {...stylex.props(styles.descriptionWrapper)}>
 					<span {...stylex.props(styles.descriptionMeasure)}>

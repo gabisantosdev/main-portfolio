@@ -1,3 +1,4 @@
+import { GABRIEL_INFORMATION } from '#/lib/global/data/gabriel-information.data'
 import { Button } from '#/lib/global/ui/Button/components'
 import { Icon } from '#/lib/global/ui/icons/components'
 import { Section } from '#/lib/global/ui/section/components'
@@ -22,11 +23,13 @@ export const ProjectPage = () => {
 				<Section.Description>{project.info?.description}</Section.Description>
 
 				<Button.Container>
-					<Button.Root href='/'>
+					<Button.Root href={project.url}>
 						<Button.Text>Visitar website</Button.Text>
 						<Icon.ArrowRight height='0.5rem' width='0.625rem' />
 					</Button.Root>
-					<Button.SecondaryRoot href='/'>
+					<Button.SecondaryRoot
+						href={GABRIEL_INFORMATION.urls.socialMedia.whatsApp}
+					>
 						<Button.Text>Vamos conversar</Button.Text>
 					</Button.SecondaryRoot>
 				</Button.Container>
@@ -61,9 +64,9 @@ export const ProjectPage = () => {
 				<Section.Image alt={project.name} src={project.image} />
 			</Section.Root>
 
-			<Section.RootSecondary>
+			<Section.RootSecondary aria-label='Other projects section'>
 				<Section.TitleContainer>
-					<Section.TitleH2>Mais projetos</Section.TitleH2>
+					<Section.TitleH2>Outros projetos</Section.TitleH2>
 				</Section.TitleContainer>
 
 				{otherProjects.slice(0, 2).map((otherProject) => (
