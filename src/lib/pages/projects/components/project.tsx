@@ -63,7 +63,11 @@ export const ProjectPage = () => {
 						</ProjectInformation.Container>
 					</ProjectInformation.Root>
 
-					<Section.Image alt={project.name} src={project.image} />
+					<Section.Image
+						alt={project.name}
+						loading='lazy'
+						src={project.image}
+					/>
 				</Section.Root>
 			</Effect.RevealOnScroll>
 
@@ -82,6 +86,7 @@ export const ProjectPage = () => {
 							<ProjectCard.CardRoot>
 								<ProjectCard.CardImage
 									alt={otherProject.name}
+									loading='lazy'
 									src={otherProject.image}
 								/>
 								<ProjectCard.CardOverlay>

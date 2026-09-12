@@ -11,14 +11,18 @@ export const ProjectsPage = () => {
 					<Section.TitleH1>Projetos</Section.TitleH1>
 				</Section.TitleContainer>
 
-				{Projects.map((project) => (
+				{Projects.map((project, index) => (
 					<Effect.RevealOnScroll key={project.id}>
 						<ProjectCard.Container
 							params={{ slugs: `${project.slug}-${project.id}` }}
 							to='/projects/$slugs'
 						>
 							<ProjectCard.CardRoot>
-								<ProjectCard.CardImage alt={project.name} src={project.image} />
+								<ProjectCard.CardImage
+									alt={project.name}
+									loading={index === 0 ? 'eager' : 'lazy'}
+									src={project.image}
+								/>
 								<ProjectCard.CardOverlay>
 									<ProjectCard.CardTitle>{project.name}</ProjectCard.CardTitle>
 								</ProjectCard.CardOverlay>
