@@ -1,6 +1,7 @@
 export const GABRIEL_INFORMATION = {
 	name: 'Gabriel Santos Coutinho',
 	urls: {
+		website: 'https://gabrielscoutinho.com',
 		socialMedia: {
 			instagram: 'https://www.instagram.com/gabrielscoutinhodev/',
 			twitter: 'https://x.com/gabscoutinhodev',

@@ -80,12 +80,12 @@ export const ProjectCardRoot = ({ ...restProps }: ProjectCardRootProps) => {
 	return <article {...stylex.props(styles.card)} {...restProps} />
 }
 
-interface ProjectCardImageProps extends ComponentProps<'img'> {}
+interface ProjectCardImageProps extends Omit<ComponentProps<'img'>, 'alt'> {
+	alt: string
+}
 
-export const ProjectCardImage = ({ ...restProps }: ProjectCardImageProps) => {
-	return (
-		<img {...stylex.props(styles.image)} alt='Project img' {...restProps} />
-	)
+export const ProjectCardImage = ({ alt, ...restProps }: ProjectCardImageProps) => {
+	return <img {...stylex.props(styles.image)} alt={alt} {...restProps} />
 }
 
 interface ProjectCardOverlayProps extends ComponentProps<'div'> {}

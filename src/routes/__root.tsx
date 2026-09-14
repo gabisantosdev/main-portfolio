@@ -2,6 +2,7 @@ import * as stylex from '@stylexjs/stylex'
 import { createRootRoute, HeadContent, Scripts } from '@tanstack/react-router'
 import { SocialMediaInformation } from '#/lib/global/constants/social-media-information'
 import { GABRIEL_INFORMATION } from '#/lib/global/data/gabriel-information.data'
+import { personJsonLd } from '#/lib/global/seo/seo'
 import { Button } from '#/lib/global/ui/Button/components'
 import { Effect } from '#/lib/global/ui/effects/components'
 import { Icon } from '#/lib/global/ui/icons/components'
@@ -39,12 +40,14 @@ export const Route = createRootRoute({
 				name: 'viewport',
 				content: 'width=device-width, initial-scale=1',
 			},
-			{
-				title: 'Gabriel Coutinho | Especialista em sites',
-			},
-			{ name: 'description', content: 'Especialista em criação de sites' },
+			{ name: 'theme-color', content: '#071831' },
+			{ 'script:ld+json': personJsonLd },
 		],
-		links: [{ rel: 'stylesheet', href: globalCss }],
+		links: [
+			{ rel: 'stylesheet', href: globalCss },
+			{ rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
+			{ rel: 'manifest', href: '/site.webmanifest' },
+		],
 	}),
 	shellComponent: RootDocument,
 	notFoundComponent: ErrorBoundary,

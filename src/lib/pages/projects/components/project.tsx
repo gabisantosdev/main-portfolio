@@ -25,10 +25,12 @@ export const ProjectPage = () => {
 					<Section.Description>{project.info?.description}</Section.Description>
 
 					<Button.Container>
-						<Button.Root href={project.url}>
-							<Button.Text>Visitar website</Button.Text>
-							<Icon.ArrowRight height='0.5rem' width='0.625rem' />
-						</Button.Root>
+						{project.url ? (
+							<Button.Root href={project.url}>
+								<Button.Text>Visitar website</Button.Text>
+								<Icon.ArrowRight height='0.5rem' width='0.625rem' />
+							</Button.Root>
+						) : null}
 						<Button.SecondaryRoot
 							href={GABRIEL_INFORMATION.urls.socialMedia.whatsApp}
 						>
@@ -64,7 +66,7 @@ export const ProjectPage = () => {
 					</ProjectInformation.Root>
 
 					<Section.Image
-						alt={project.name}
+						alt={project.imageAlt}
 						loading='lazy'
 						src={project.image}
 					/>
@@ -85,7 +87,7 @@ export const ProjectPage = () => {
 						>
 							<ProjectCard.CardRoot>
 								<ProjectCard.CardImage
-									alt={otherProject.name}
+									alt={otherProject.imageAlt}
 									loading='lazy'
 									src={otherProject.image}
 								/>

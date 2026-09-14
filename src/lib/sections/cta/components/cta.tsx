@@ -111,20 +111,25 @@ export const CtaSocialMedia = ({ ...restProps }: CtaSocialMediaProps) => {
 	return <ul {...stylex.props(styles.socialMedia)} {...restProps} />
 }
 
-interface CtaSocialMediaLinkProps extends ComponentProps<'a'> {
+interface CtaSocialMediaLinkProps
+	extends Omit<ComponentProps<'a'>, 'href'> {
 	label: string
+	href: string
 }
 
 export const CtaSocialMediaLink = ({
 	label,
 	children,
+	href,
 	...restProps
 }: CtaSocialMediaLinkProps) => {
 	return (
 		<li>
 			<a
 				{...stylex.props(styles.socialMediaLink)}
+				aria-label={label}
 				data-label={label}
+				href={href}
 				rel='noopener noreferrer'
 				target='_blank'
 				{...restProps}

@@ -36,8 +36,8 @@ export const NotFound = () => {
 			<Section.Root>
 				<div {...stylex.props(styles.box)}>
 					<div {...stylex.props(styles.content)}>
-						<span {...stylex.props(styles.number)}>404</span>
-						<p {...stylex.props(styles.text)}>Página não encontrada.</p>
+						<p {...stylex.props(styles.number)}>404</p>
+						<h1 {...stylex.props(styles.text)}>Página não encontrada.</h1>
 					</div>
 					<Button.Root to='/'>
 						<Button.Text>Voltar ao início</Button.Text>

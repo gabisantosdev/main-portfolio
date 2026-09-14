@@ -134,8 +134,10 @@ export const SectionDescription = ({
 	return <p {...stylex.props(styles.description)} {...restProps} />
 }
 
-interface SectionImageProps extends ComponentProps<'img'> {}
+interface SectionImageProps extends Omit<ComponentProps<'img'>, 'alt'> {
+	alt: string
+}
 
-export const SectionImage = ({ ...restProps }: SectionImageProps) => {
-	return <img {...stylex.props(styles.image)} {...restProps} />
+export const SectionImage = ({ alt, ...restProps }: SectionImageProps) => {
+	return <img {...stylex.props(styles.image)} alt={alt} {...restProps} />
 }

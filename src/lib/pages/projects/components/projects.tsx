@@ -19,7 +19,7 @@ export const ProjectsPage = () => {
 						>
 							<ProjectCard.CardRoot>
 								<ProjectCard.CardImage
-									alt={project.name}
+									alt={project.imageAlt}
 									loading={index === 0 ? 'eager' : 'lazy'}
 									src={project.image}
 								/>

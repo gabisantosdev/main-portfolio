@@ -108,7 +108,7 @@ export function HeroBio() {
 			<div {...stylex.props(styles.avatar)}>
 				<img
 					{...stylex.props(styles.avatarImage)}
-					alt='Gabriel Coutinho avatar'
+					alt='Retrato de Gabriel Santos Coutinho'
 					src={avatarImage}
 				/>
 			</div>

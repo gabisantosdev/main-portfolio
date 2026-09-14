@@ -65,12 +65,14 @@ interface ButtonRootProps {
 
 export const ButtonRoot = ({ href, to, children }: ButtonRootProps) => {
 	if (href) {
+		const opensNewTab = href.startsWith('http')
+
 		return (
 			<a
 				{...stylex.props(styles.base, styles.root)}
 				href={href}
-				rel='noopener noreferrer'
-				target='_blank'
+				rel={opensNewTab ? 'noopener noreferrer' : undefined}
+				target={opensNewTab ? '_blank' : undefined}
 			>
 				{children}
 			</a>
@@ -96,12 +98,14 @@ export const ButtonSecondaryRoot = ({
 	children,
 }: ButtonSecondaryRootProps) => {
 	if (href) {
+		const opensNewTab = href.startsWith('http')
+
 		return (
 			<a
 				{...stylex.props(styles.base, styles.secondary)}
 				href={href}
-				rel='noopener noreferrer'
-				target='_blank'
+				rel={opensNewTab ? 'noopener noreferrer' : undefined}
+				target={opensNewTab ? '_blank' : undefined}
 			>
 				{children}
 			</a>

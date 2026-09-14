@@ -92,7 +92,7 @@ export const Home = () => {
 							>
 								<ProjectCard.CardRoot>
 									<ProjectCard.CardImage
-										alt={project.name}
+										alt={project.imageAlt}
 										loading='lazy'
 										src={project.image}
 									/>

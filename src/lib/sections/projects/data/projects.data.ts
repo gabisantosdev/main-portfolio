@@ -6,6 +6,7 @@ type Project = {
 	slug: string
 	name: string
 	image: string
+	imageAlt: string
 	url?: string
 	info?: {
 		description?: string
@@ -22,7 +23,8 @@ export const Projects: Project[] = [
 		slug: 'branding-portfolio',
 		name: 'Branding Portfolio',
 		image: BrandingPortfolio,
-		url: '#',
+		imageAlt:
+			'Prévia do website Branding Portfolio, com tipografia marcante e navegação lateral.',
 		info: {
 			description:
 				'A Empresa oferece uma experiência fluida e impactante ao apresentar seu trabalho em tela cheia. Ela combina tipografia suíça marcante, animações suaves, navegação por barra lateral e um CMS flexível — tudo para fazer seu portfólio se destacar.',
@@ -37,7 +39,7 @@ export const Projects: Project[] = [
 		slug: 'craftsman',
 		name: 'Craftsman',
 		image: Craftsman,
-		url: '#',
+		imageAlt: 'Prévia do website institucional Craftsman.',
 		info: {
 			description:
 				'A Empresa oferece uma experiência fluida e impactante ao apresentar seu trabalho em tela cheia.',
