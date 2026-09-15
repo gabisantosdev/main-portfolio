@@ -128,6 +128,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 						<Footer.Text>© 2026 GABRIEL S. COUTINHO</Footer.Text>
 					</Footer.Root>
 				</div>
+				<Effect.BottomBlur />
 				<Scripts />
 			</body>
 		</html>

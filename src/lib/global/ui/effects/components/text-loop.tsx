@@ -25,7 +25,6 @@ const styles = stylex.create({
 		WebkitMaskImage:
 			'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
 	},
-
 	track: {
 		display: 'flex',
 		width: 'max-content',
@@ -39,13 +38,11 @@ const styles = stylex.create({
 			animationPlayState: 'paused',
 		},
 	},
-
 	group: {
 		display: 'flex',
 		flexShrink: 0,
 		paddingRight: spacing[100],
 	},
-
 	content: {
 		flexShrink: 0,
 		color: colors.text100,
@@ -53,7 +50,7 @@ const styles = stylex.create({
 	},
 })
 
-interface TextLoopProps extends ComponentProps<'div'> {}
+type TextLoopProps = ComponentProps<'div'>
 
 export function TextLoop({ children, ...restProps }: TextLoopProps) {
 	return (
