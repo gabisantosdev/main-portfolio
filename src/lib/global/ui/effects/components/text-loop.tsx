@@ -17,7 +17,9 @@ const styles = stylex.create({
 	root: {
 		width: '100%',
 		overflow: 'hidden',
+		paddingBlock: '3px',
 		whiteSpace: 'nowrap',
+
 		maskImage:
 			'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
 		WebkitMaskImage:
@@ -27,6 +29,7 @@ const styles = stylex.create({
 	track: {
 		display: 'flex',
 		width: 'max-content',
+
 		animationName: textLoop,
 		animationDuration: '10s',
 		animationTimingFunction: 'linear',
@@ -37,10 +40,16 @@ const styles = stylex.create({
 		},
 	},
 
-	item: {
+	group: {
+		display: 'flex',
 		flexShrink: 0,
 		paddingRight: spacing[100],
+	},
+
+	content: {
+		flexShrink: 0,
 		color: colors.text100,
+		lineHeight: 1.2,
 	},
 })
 
@@ -50,10 +59,12 @@ export function TextLoop({ children, ...restProps }: TextLoopProps) {
 	return (
 		<div {...stylex.props(styles.root)} {...restProps}>
 			<div {...stylex.props(styles.track)}>
-				<div {...stylex.props(styles.item)}>{children}</div>
+				<div {...stylex.props(styles.group)}>
+					<div {...stylex.props(styles.content)}>{children}</div>
+				</div>
 
-				<div {...stylex.props(styles.item)} aria-hidden='true'>
-					{children}
+				<div {...stylex.props(styles.group)} aria-hidden='true'>
+					<div {...stylex.props(styles.content)}>{children}</div>
 				</div>
 			</div>
 		</div>

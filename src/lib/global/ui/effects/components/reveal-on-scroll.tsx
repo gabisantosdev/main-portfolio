@@ -5,7 +5,7 @@ import { type ComponentProps, useEffect, useRef, useState } from 'react'
 const reveal = stylex.keyframes({
 	from: {
 		opacity: 0,
-		transform: 'translate3d(0, 1.5rem, 0)',
+		transform: 'translate3d(0, 5rem, 0)',
 	},
 
 	to: {
@@ -17,7 +17,7 @@ const reveal = stylex.keyframes({
 const styles = stylex.create({
 	visible: {
 		animationName: reveal,
-		animationDuration: '800ms',
+		animationDuration: '600ms',
 		animationTimingFunction: 'cubic-bezier(0.22, 1, 0.36, 1)',
 		animationFillMode: 'both',
 
@@ -29,7 +29,7 @@ const styles = stylex.create({
 	},
 })
 
-interface RevealOnScrollProps extends ComponentProps<'div'> {}
+type RevealOnScrollProps = ComponentProps<'div'> & {}
 
 export const RevealOnScroll = ({ ...restProps }: RevealOnScrollProps) => {
 	const ref = useRef<HTMLDivElement>(null)
@@ -37,7 +37,6 @@ export const RevealOnScroll = ({ ...restProps }: RevealOnScrollProps) => {
 
 	useEffect(() => {
 		const element = ref.current
-
 		if (!element) return
 
 		const observer = new IntersectionObserver(
