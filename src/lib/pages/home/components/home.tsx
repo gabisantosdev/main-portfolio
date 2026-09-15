@@ -1,6 +1,5 @@
 import { GABRIEL_INFORMATION } from '#/lib/global/data/gabriel-information.data'
 import { Button } from '#/lib/global/ui/Button/components'
-import { ButtonSecondaryRoot } from '#/lib/global/ui/Button/components/Button'
 import { Effect } from '#/lib/global/ui/effects/components'
 import { Icon } from '#/lib/global/ui/icons/components'
 import { Section } from '#/lib/global/ui/section/components'
@@ -106,10 +105,9 @@ export const Home = () => {
 						</Effect.RevealOnScroll>
 					))}
 
-					<ButtonSecondaryRoot to='/projects'>
+					<Button.SecondaryRoot to='/projects'>
 						<Button.Text>Ver todos os projetos</Button.Text>
-						<Icon.ArrowRight height='0.5rem' width='0.625rem' />
-					</ButtonSecondaryRoot>
+					</Button.SecondaryRoot>
 				</Section.RootSecondary>
 			</Effect.RevealOnScroll>
 		</main>
